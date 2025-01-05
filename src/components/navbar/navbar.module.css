@@ -23,15 +23,19 @@
 .headerContainer_menu__link {
     text-decoration: none;
     /* Quita el subrayado */
-    color: inherit;
     /* Hereda el color del contenedor */
     display: block;
     /* Asegura que el enlace ocupe todo el espacio del `li` */
     position: relative;
     overflow: hidden;
+    color: var(--text-300);
     /* Para las animaciones */
     height: 100%;
     /* Igual al contenedor del texto */
+}
+
+.headerContainer_menu__link.active {
+    color: var(--text-100);
 }
 
 .headerContainer_burgerMenu {

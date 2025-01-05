@@ -37,7 +37,16 @@ const Navbar = () => {
         <div className={styles.headerContainer_menu__content}>
           <ul className={styles.headerContainer_menu__list}>
             <li className={styles.headerContainer_menu__listItem}>
-              <NavLink to="/" className={styles.headerContainer_menu__link}>
+              <NavLink
+                onClick={toggleHamburger}
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.headerContainer_menu__link} ${styles.active}`
+                    : styles.headerContainer_menu__link
+                }
+                end
+              >
                 <span className={styles.headerContainer_menu__listTextOriginal}>
                   Home
                 </span>
@@ -48,8 +57,14 @@ const Navbar = () => {
             </li>
             <li className={styles.headerContainer_menu__listItem}>
               <NavLink
+                onClick={toggleHamburger}
                 to="/projects"
-                className={styles.headerContainer_menu__link}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.headerContainer_menu__link} ${styles.active}`
+                    : styles.headerContainer_menu__link
+                }
+                end
               >
                 <span className={styles.headerContainer_menu__listTextOriginal}>
                   Projects
@@ -61,8 +76,15 @@ const Navbar = () => {
             </li>
             <li className={styles.headerContainer_menu__listItem}>
               <NavLink
+                onClick={toggleHamburger}
+                aria-label="About"
                 to="/about"
-                className={styles.headerContainer_menu__link}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.headerContainer_menu__link} ${styles.active}`
+                    : styles.headerContainer_menu__link
+                }
+                end
               >
                 <span className={styles.headerContainer_menu__listTextOriginal}>
                   About
@@ -74,8 +96,14 @@ const Navbar = () => {
             </li>
             <li className={styles.headerContainer_menu__listItem}>
               <NavLink
+                onClick={toggleHamburger}
                 to="/resume"
-                className={styles.headerContainer_menu__link}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.headerContainer_menu__link} ${styles.active}`
+                    : styles.headerContainer_menu__link
+                }
+                end
               >
                 <span className={styles.headerContainer_menu__listTextOriginal}>
                   Résumé

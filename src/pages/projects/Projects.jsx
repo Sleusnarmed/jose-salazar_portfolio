@@ -1,4 +1,3 @@
-import './projects.module.css'
 
 const Projects = () => {
   return (
