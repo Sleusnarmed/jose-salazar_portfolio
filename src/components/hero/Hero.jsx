@@ -1,9 +1,11 @@
-import './hero.module.css'
+import styles from './hero.module.css'
 
 const Hero = () => {
   return (
     <div>
-      Esto es un hero section
+      <div className={styles.heroSectionContainer}>
+        <span></span>
+      </div>
     </div>
   )
 }

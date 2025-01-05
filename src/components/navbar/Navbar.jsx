@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router";
 import styles from "./navbar.module.css";
 import twitter from "@/assets/img/x-logo.png";
 import linkedin from "@/assets/img/linkedin-logo.png";
@@ -36,36 +37,53 @@ const Navbar = () => {
         <div className={styles.headerContainer_menu__content}>
           <ul className={styles.headerContainer_menu__list}>
             <li className={styles.headerContainer_menu__listItem}>
-              <span className={styles.headerContainer_menu__listTextOriginal}>
-                Home
-              </span>
-              <span className={styles.headerContainer_menu__listTextHover}>
-                Home
-              </span>
+              <NavLink to="/" className={styles.headerContainer_menu__link}>
+                <span className={styles.headerContainer_menu__listTextOriginal}>
+                  Home
+                </span>
+                <span className={styles.headerContainer_menu__listTextHover}>
+                  Home
+                </span>
+              </NavLink>
             </li>
             <li className={styles.headerContainer_menu__listItem}>
-              <span className={styles.headerContainer_menu__listTextOriginal}>
-                Projects
-              </span>
-              <span className={styles.headerContainer_menu__listTextHover}>
-                Projects
-              </span>
+              <NavLink
+                to="/projects"
+                className={styles.headerContainer_menu__link}
+              >
+                <span className={styles.headerContainer_menu__listTextOriginal}>
+                  Projects
+                </span>
+                <span className={styles.headerContainer_menu__listTextHover}>
+                  Projects
+                </span>
+              </NavLink>
             </li>
             <li className={styles.headerContainer_menu__listItem}>
-              <span className={styles.headerContainer_menu__listTextOriginal}>
-                About
-              </span>
-              <span className={styles.headerContainer_menu__listTextHover}>
-                About
-              </span>
+              <NavLink
+                to="/about"
+                className={styles.headerContainer_menu__link}
+              >
+                <span className={styles.headerContainer_menu__listTextOriginal}>
+                  About
+                </span>
+                <span className={styles.headerContainer_menu__listTextHover}>
+                  About
+                </span>
+              </NavLink>
             </li>
             <li className={styles.headerContainer_menu__listItem}>
-              <span className={styles.headerContainer_menu__listTextOriginal}>
-                Résumé
-              </span>
-              <span className={styles.headerContainer_menu__listTextHover}>
-                Résumé
-              </span>
+              <NavLink
+                to="/resume"
+                className={styles.headerContainer_menu__link}
+              >
+                <span className={styles.headerContainer_menu__listTextOriginal}>
+                  Résumé
+                </span>
+                <span className={styles.headerContainer_menu__listTextHover}>
+                  Résumé
+                </span>
+              </NavLink>
             </li>
           </ul>
         </div>

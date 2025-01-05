@@ -9,7 +9,7 @@
 .headerContainer_name {
     font-family: var(--font-logo);
     font-style: italic;
-    font-size: 32px; 
+    font-size: 32px;
     margin: 15px 50px;
     text-align: center;
 }
@@ -18,6 +18,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.headerContainer_menu__link {
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: inherit;
+    /* Hereda el color del contenedor */
+    display: block;
+    /* Asegura que el enlace ocupe todo el espacio del `li` */
+    position: relative;
+    overflow: hidden;
+    /* Para las animaciones */
+    height: 100%;
+    /* Igual al contenedor del texto */
 }
 
 .headerContainer_burgerMenu {
