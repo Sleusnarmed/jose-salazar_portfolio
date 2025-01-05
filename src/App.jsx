@@ -1,15 +1,28 @@
-import './App.css'
-import Header from './components/header/Header'
-import Hero from './components/hero/Hero'
+import { createBrowserRouter, RouterProvider } from "react-router";
 
-function App() {
+// Importar componentes y páginas
+import MainLayout from "./components/mainLayout/MainLayout.jsx";
+import Home from "./pages/home/Home.jsx";
+import About from "./pages/about/About.jsx";
 
-  return (
-    <>
-      <Header/>
-      <Hero/>
-    </>
-  )
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/about", element: <About /> }
+    ],
+  },
+  {
+    path: "*",
+    element: <h1>Página no encontrada</h1>,
+  },
+]);
 
-export default App
+
+const App = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default App;

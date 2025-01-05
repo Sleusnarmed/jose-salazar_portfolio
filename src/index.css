@@ -1,19 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Hind+Vadodara&family=Karla:ital,wght@1,600&family=Merriweather:ital@0;1&family=Scope+One&display=swap');
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-100:#1F3A5F;
-  --primary-200:#4d648d;
-  --primary-300:#acc2ef;
-  --accent-100:#3D5A80;
-  --accent-200:#cee8ff;
-  --text-100:#FFFFFF;
-  --text-200:#e0e0e0;
-  --bg-100:#0F1C2E;
-  --bg-200:#1f2b3e;
-  --bg-300:#374357;  
+  --primary-100: #1F3A5F;
+  --primary-200: #4d648d;
+  --primary-300: #acc2ef;
+  --accent-100: #3D5A80;
+  --accent-200: #cee8ff;
+  --text-100: #FFFFFF;
+  --text-200: #e0e0e0;
+  --bg-100: #0F1C2E;
+  --bg-200: #1f2b3e;
+  --bg-300: #374357;
+
+
+  --font-primary: "Karla", serif;
+  --font-weight-primary: 600;
+  --font-style-primary: italic;
+
+  --font-secondary: "Scope One", serif;
+  --font-text: "Hind Vadodara", serif;
+  --font-logo: "Merriweather", serif;
+  --font-style-logo: italic;
+  --font-change-menu: "Cinzel", serif;
+  
 }
 
 body {
@@ -22,4 +36,3 @@ body {
   display: flex;
   background-color: var(--bg-100);
 }
-
