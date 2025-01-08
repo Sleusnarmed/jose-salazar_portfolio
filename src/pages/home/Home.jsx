@@ -1,9 +1,10 @@
-import Hero from '@/components/hero/Hero.jsx'
+//import Hero from '@/components/hero/Hero.jsx'
+import Projects from '@/components/projects/Projects'
 
 const Home = () => {
   return (
     <div>
-      <Hero></Hero>
+      <Projects></Projects>
     </div>
   )
 }
