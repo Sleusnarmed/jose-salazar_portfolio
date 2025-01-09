@@ -8,6 +8,7 @@ import FirebaseLogo from "@/assets/img/firebase-logo.svg";
 import NodeLogo from "@/assets/img/nodejs-logo.svg";
 import TailwindLogo from "@/assets/img/tailwind-logo.svg";
 import PrismaLogo from "@/assets/img/prisma-logo.svg";
+import FigmaLogo from "@/assets/img/figma-logo.svg"
 
 const techStack = [
   { name: "React", Component: ReactLogo },
@@ -19,35 +20,40 @@ const techStack = [
   { name: "TypeScript", Component: TypeScriptLogo },
   { name: "Tailwind", Component: TailwindLogo },
   { name: "Prisma", Component: PrismaLogo },
+  { name: "Figma", Component: FigmaLogo },
 ];
 
 const Projects = () => {
   return (
     <div className={styles.projectsContainer}>
-      <div className={styles.projectsContainer__tools}>
-        <div className={styles.tools_text}>
+      <div className={styles.projectsContainer_toolsSection}>
+        <div className={styles.toolsSection_Header}>
           <h2>Tools</h2>
         </div>
-        <div className={styles.tools_imageContainer}>
+        <div className={styles.toolsSection_techLogos}>
           {techStack.map((tech, index) => {
-            const Logo = tech.Component; // Renombrado para mayor claridad
+            const Logos = tech.Component;
             return (
-              <div className={styles.imageContainer_wrapper} key={index}>
-                <img src={Logo} alt={tech.name} className={styles.wrapper_image} />
-                <span className={styles.wrapper_image__text}>{tech.name}</span>
+              <div className={styles.toolsSection_techItem} key={index}>
+                <div className={styles.toolsSection_techLogo}>
+                  <img src={Logos} alt={tech.name} className={styles.toolsSection_logoImage} />
+                </div>
+                <div className={styles.toolsSection_techName}>
+                  <p className={styles.toolsSection_techText}>{tech.name}</p>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
-      <div className={styles.projectsContainer__imagesProject}>
-        <div className={styles.imageProject_wrapper}>
-          <div className={styles.wrapper_imageContainer}></div>
-          <div className={styles.wrapper_textContainer}></div>
+      <div className={styles.projectsContainer_projectsGallery}>
+        <div className={styles.projectsGallery_Card}>
+          <div className={styles.projectsGallery_Image}></div>
+          <div className={styles.projectsGallery_Description}></div>
         </div>
-        <div className={styles.imageProject_wrapper}>
-          <div className={styles.wrapper_imageContainer}></div>
-          <div className={styles.wrapper_textContainer}></div>
+        <div className={styles.projectsGallery_Card}>
+          <div className={styles.projectsGallery_Image}></div>
+          <div className={styles.projectsGallery_Description}></div>
         </div>
       </div>
     </div>

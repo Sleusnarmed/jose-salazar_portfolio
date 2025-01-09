@@ -1,9 +1,11 @@
-//import Hero from '@/components/hero/Hero.jsx'
+import Hero from '@/components/hero/Hero.jsx'
 import Projects from '@/components/projects/Projects'
+import styles from './home.module.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className={styles.hola}>
+      <Hero></Hero>
       <Projects></Projects>
     </div>
   )

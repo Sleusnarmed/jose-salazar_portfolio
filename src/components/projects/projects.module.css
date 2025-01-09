@@ -1,31 +1,55 @@
-.projectsContainer {
+.projectsContainer, .projectsContainer_toolsSection {
     width: 100%;
-    display: flex;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    overflow: hidden;
     justify-content: center;
+    padding: 50px 0;
 }
 
-.tools_imageContainer{
-    display: flex;
-    background-color: aqua;
-    width: 100%;
-    padding: 10px;
-    gap: 10px;
+.toolsSection_Header{
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    font-family: var(--font-secondary);
+    color: var(--text-100);
+    background-color: var(--bg-200);
 }
 
-.imageContainer_wrapper{
-    display: flex;
-    padding: 10px;
+.toolsSection_techLogos{
     align-items: center;
-    background-color: aliceblue;
-    width: 100px;
+    background-color: var(--bg-200);
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5rem;
+    width: 50%;
+}
+
+.toolsSection_techItem{
+    align-items: center;
+    background: var(--bg-300);
+    border-radius: 8px;
+    display: flex;
+    flex: 0 1 18%;
+    height: 60px;
+    justify-content: space-evenly;
+    margin: 1%;
+}
+
+.toolsSection_logoImage {
+    color: var(--accent-100);
+    width: 30px;
+    height: 30px;
 }
 
 
-.wrapper_image{
-    height: 50px;
-    width: 50px;
+.toolsSection_techName{
+    color: var(--text-100);
+    font-family: var(--font-text);
+    font-size: 14px;
 }
 /*
 .tech-grid {
