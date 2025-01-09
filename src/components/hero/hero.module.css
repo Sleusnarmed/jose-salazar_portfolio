@@ -1,5 +1,6 @@
 .heroSectionContainer {
     max-width: 100%;
+    width: 100%;
 }
 
 .heroSectionContainer__text {
@@ -38,7 +39,7 @@ h1 {
 .heroSection__top {
     display: flex;
     margin-top: 20px;
-    width: 100vw;
+    width: 100%;
     justify-content: space-evenly;
     animation: slideIn 4s forwards;
 }
