@@ -63,9 +63,6 @@ const HeroSection = () => {
           />
         </div>
       </div>
-      <div className={styles.heroSection__arrowDown}>
-        <div className={styles.hola}>▽hola</div>
-      </div>
     </div>
   );
 };
