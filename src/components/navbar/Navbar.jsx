@@ -8,7 +8,13 @@ import github from "@/assets/img/github-logo.png";
 const Navbar = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  const toggleHamburger = () => setHamburgerOpen((prev) => !prev);
+  const toggleHamburger = () => {
+    setHamburgerOpen((prev) => !prev);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <div className={styles.headerContainer}>
