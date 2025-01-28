@@ -70,7 +70,7 @@ const Orb = ({
 
         ctx.beginPath();
         ctx.arc(x, y, particleSize, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${finalZ > 0 ? 0.8 : 0.4})`; // Se cambia la opacidad dependiendo de z
+        ctx.fillStyle = `rgba(94, 193, 158, ${finalZ > 0 ? 0.8 : 0.4})`; // Se cambia la opacidad dependiendo de z
         ctx.fill();
       });
 
