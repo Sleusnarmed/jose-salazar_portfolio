@@ -5,6 +5,7 @@ import Orb from "@/components/orb/Orb.jsx";
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState("CodeCrafter");
   const [isFinalText, setIsFinalText] = useState(false);
+  const [orbSize, setOrbSize] = useState(500); 
   const indexRef = useRef(0);
 
   useEffect(() => {
@@ -24,6 +25,26 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const updateOrbSize = () => {
+      const width = window.innerWidth;
+
+      if (width >= 1440) {
+        setOrbSize(600); 
+      } else if (width >= 1024) {
+        setOrbSize(450); // Tamaño mediano para pantallas medianas
+      } else {
+        setOrbSize(400); // Tamaño aún más pequeño para pantallas muy pequeñas
+      }
+    };
+    updateOrbSize();
+
+    window.addEventListener("resize", updateOrbSize);
+
+    return () => {
+      window.removeEventListener("resize", updateOrbSize);
+    };
+  }, []);
   return (
     <div className={styles.heroSectionContainer}>
       <div className={styles.heroSection__top}>
@@ -56,10 +77,10 @@ const HeroSection = () => {
         </div>
         <div className={styles.heroSectionContainer__particleOrb}>
           <Orb
-            totalParticles={700}
-            size={400}
-            rotationSpeed={0.01}
-            particleSize={1.5}
+            totalParticles={800}
+            size={orbSize}
+            rotationSpeed={0.009}
+            particleSize={1.7}
           />
         </div>
       </div>

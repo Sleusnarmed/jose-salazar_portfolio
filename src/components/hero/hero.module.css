@@ -7,12 +7,12 @@
 
 .heroSectionContainer__text {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: center;    
     color: var(--text-100);
-    padding: 20px;
+    padding: 60px 30px;
     width: 40%;
 }
+
 
 h1 {
     font-size: 2.5rem;
@@ -24,7 +24,7 @@ h1 {
 
 .dynamicText {
     display: inline-block;
-    color: #0070f3;
+    color: #ACC2EF;
     opacity: 0;
     transform: translateY(20px);
     animation: slideIn 1s forwards, fadeOut 1s 1s forwards;
@@ -32,26 +32,26 @@ h1 {
 
 .finalText {
     display: inline-block;
-    color: #0070f3;
+    color: #ACC2EF;
     opacity: 1;
     animation: slideIn 1s forwards;
     transform: translateY(0);
 }
-
 .heroSection__top {
     display: flex;
+    align-items: center;
     margin-top: 20px;
     width: 100%;
     justify-content: space-evenly;
     animation: slideIn 4s forwards;
 }
-
 .heroSectionContainer__finalText {
-    width: 40%;
+    display: flex;
+    align-items: center;
+    width: 50%;
     border-radius: 20px;
-    height: 100%;
+    margin: 0 10px;
     padding: 60px 30px;
-    margin: 20px 0;
     color: var(--text-100);
     background-color: var(--bg-200);
 }
@@ -62,6 +62,7 @@ h1 {
     margin: 0;
     padding: 0;
     font-size: 20px;
+    text-align: center;
     animation: slideIn 4.5s forwards;
 }
 
@@ -70,16 +71,12 @@ h1 {
 }
 
 .heroSectionContainer__particleOrb {
-    width: 30%;
+    display: grid;
+    place-content: center;
+    width: 40%;
     animation: slideIn 4.5 forwards;
+    transition: all 0.6s ease-in-out 0.6s;
 }
-
-
-
-
-
-
-
 
 
 @keyframes slideIn {
@@ -105,3 +102,69 @@ h1 {
         transform: translateY(-20px);
     }
 }
+@media screen and (min-width: 1440px){
+    .heroSectionContainer {
+        min-height: 90vh;
+    }
+
+    h1{
+        font-size: 3.5rem;
+    }
+
+    .heroSectionContainer__finalText{
+        width: 40%;
+    }
+
+    .heroSectionContainer__finalText p{
+        font-size: 1.8rem;
+    }
+
+    .heroSectionContainer__finalText h1{
+        font-size: 4rem;
+    }
+
+    .heroSectionContainer__particleOrb{
+        width: 40%;
+    }
+
+    .dynamicText {
+        margin: 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .heroSection__top {
+        flex-direction: column;
+    }
+
+    .heroSectionContainer__particleOrb{
+        position: absolute;
+        top: 130px;
+
+    }
+
+    .heroSectionContainer__finalText {
+        width: 80%;
+        background-color: transparent;
+    }
+
+    .heroSectionContainer__finalText p{
+        text-align: left;
+    }
+}
+@media screen and (max-width: 425px){
+    .heroSectionContainer__particleOrb{
+        top: 240px;
+    }
+    .heroSectionContainer__finalText p{
+        font-size: 18px;
+    }
+
+}
+@media screen and (max-width: 320px) {
+    .heroSectionContainer__finalText h1{
+        font-size: 2rem;
+    }
+}
+

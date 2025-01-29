@@ -1,4 +1,4 @@
-import styles from "./projects.module.css";
+import styles from "./toolsSection.module.css";
 import ReactLogo from "@/assets/img/react-logo.svg";
 import NextjsLogo from "@/assets/img/nextjs-logo.svg";
 import TypeScriptLogo from "@/assets/img/typescript-logo.svg";
@@ -23,7 +23,7 @@ const techStack = [
   { name: "Figma", Component: FigmaLogo },
 ];
 
-const Projects = () => {
+const ToolsSection = () => {
   return (
     <div className={styles.projectsContainer}>
       <div className={styles.projectsContainer_toolsSection}>
@@ -60,4 +60,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ToolsSection;
