@@ -7,7 +7,7 @@ import * as THREE from "three";
 import React, { useState } from "react";
 import { useGLTF, Text } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import modeloUrl from '@/assets/3d-models/oficina_setup.glb'
+import modeloUrl from '@/assets/3d-models/oficina_setup.glb';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -79,10 +79,21 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Model(props: JSX.IntrinsicElements["group"]) {
+export function Model(props: JSX.IntrinsicElements["group"] & {
+  onPantallaClick?: () => void;
+}) {
+  const { onPantallaClick, ...restProps } = props;
   const { nodes, materials } = useGLTF(modeloUrl) as GLTFResult;
-
   const [mostrarTitulo, setMostrarTitulo] = useState<boolean>(false);
+
+  const handlePantallaClick = (e: any) => {
+    e.stopPropagation();
+    setMostrarTitulo(true);
+    
+    if (onPantallaClick) {
+      onPantallaClick();
+    }
+  };
 
   return (
     <group {...props} dispose={null}>
@@ -129,15 +140,11 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         position={[-0.083, 0, -0.628]}
       />
 
-      {/* Pantalla interactiva */}
       <mesh
         geometry={nodes.Pantalla.geometry}
         material={materials["Material.005"]}
         position={[-0.083, 0, -0.628]}
-        onClick={(e) => {
-          e.stopPropagation();
-          setMostrarTitulo((v) => !v);
-        }}
+        onClick={handlePantallaClick} 
         onPointerOver={(e) => {
           e.stopPropagation();
           document.body.style.cursor = "pointer";
@@ -148,15 +155,13 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       >
         {mostrarTitulo && (
           <Text
-            position={[0, 2.5, 0]}
-            fontSize={0.3}
+            position={[0.4, 0.7, -0.13]}
+            fontSize={0.085}
             color="white"
             anchorX="center"
             anchorY="middle"
-            outlineWidth={0.02}
-            outlineColor="black"
           >
-            Mi Portafolio
+            Jose Salazar
           </Text>
         )}
       </mesh>
