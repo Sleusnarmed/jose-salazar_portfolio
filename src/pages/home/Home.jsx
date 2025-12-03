@@ -1,6 +1,5 @@
 import Hero from '@/components/hero/Hero.jsx'
 import ToolsSection from '@/components/toolsSection/ToolsSection.jsx'
-import ImageHover from '@/components/imageHover/ImageHover'
 import styles from './home.module.css'
 
 const Home = () => {
@@ -8,7 +7,7 @@ const Home = () => {
     <div className={styles.hola}>
       <Hero></Hero>
       <ToolsSection></ToolsSection>
-      <ImageHover></ImageHover>
+     
     </div>
   )
 }
