@@ -36,11 +36,8 @@
   position: absolute;
   top: 50%;
   left: 0;
-  text-align: center;
-  letter-spacing: 2px;
   pointer-events: none;
   transform: scale(1) translateY(-50%);
-  font-family: var(--font-mulish);
   transition: transform 500ms;
 }
 
@@ -79,14 +76,14 @@
   --scale-animation: scale(1);
 }
 
-.card__name {
+.card__title {
   color: #fff;
   font-size: 28px;
   letter-spacing: 1px;
   font-family: var(--font-primary);
 }
 
-.card__ocupation {
+.card__description {
   color: aliceblue;
   font-family: var(--font-secondary);
   font-size: 16px;
@@ -124,4 +121,51 @@
 
 .card__links svg:nth-child(2):hover {
   background: var(--bg-instagram);
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+.card__tech {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: auto;
+}
+
+.techIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.cardBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #b7cfff;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.cardBtn img {
+  width: 18px;
+  height: 18px;
+}
+
+.cardBtn:hover {
+  opacity: 0.6;
 }

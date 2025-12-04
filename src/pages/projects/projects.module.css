@@ -1,34 +1,32 @@
 .projectsContainer {
-  width: 90%;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 100%;
 }
 
 .gridMasonry {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  max-width: 1400px;
+  column-count: 3;
+  column-gap: 1.2rem;
+  width: auto;
+  max-width: none;
+  margin: 0 auto;
 }
 
-@media (min-width: 1200px) {
+.gridMasonry > * {
+  break-inside: avoid;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 1200px) {
   .gridMasonry {
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    column-count: 2;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .gridMasonry {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .gridMasonry {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    column-count: 1;
   }
 }
