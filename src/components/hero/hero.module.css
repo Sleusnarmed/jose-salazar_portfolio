@@ -17,7 +17,6 @@
     padding: 0;
 }
 
-/* Contenedor principal - POSITION RELATIVE ES CLAVE */
 .modelContainer {
   position: relative;
   width: 100vw;
@@ -32,7 +31,6 @@
   height: 100%;
 }
 
-/* Botón de volver */
 .zoomBackButton {
   position: absolute;
   top: 20px;
@@ -55,7 +53,7 @@
   transform: translateY(-2px);
 }
 
-/* OVERLAY CONTAINER - LA PARTE NUEVA */
+
 .overlayContainer {
   position: absolute;
   top: 0;
@@ -69,7 +67,7 @@
   z-index: 50;
 }
 
-/* Tarjeta de perfil */
+
 .profileCard {
   pointer-events: auto; /* Vuelve a habilitar clics en la tarjeta */
   background: rgba(255, 255, 255, 0.95);

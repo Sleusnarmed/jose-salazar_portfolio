@@ -1,0 +1,143 @@
+.heroSectionContainer {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 90vh;
+}
+
+.aboutTitle {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-primary);
+  font-style: italic;
+  text-align: center;
+}
+
+.heroSection__content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  margin-top: 20px;
+  animation: slideIn 1.2s forwards;
+}
+
+.heroSectionContainer__finalText {
+  width: 45%;
+  border-radius: 20px;
+  padding: 60px 30px;
+  background-color: var(--bg-200);
+  color: var(--text-100);
+}
+
+.heroSectionContainer__finalText p,
+.heroSectionContainer__finalText h1 {
+  font-family: var(--font-text);
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.dynamicText {
+  display: inline-block;
+  color: #0070f3;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards, fadeOut 1s 1s forwards;
+}
+
+.finalText {
+  display: inline-block;
+  color: #0070f3;
+  opacity: 1;
+  animation: slideIn 1s forwards;
+  transform: translateY(0);
+}
+
+.heroSection__image {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroSection__image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .heroSectionContainer__finalText p {
+    font-size: 1.8rem;
+  }
+
+  .heroSectionContainer__finalText h1 {
+    font-size: 4rem;
+  }
+
+  .dynamicText {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .heroSection__content {
+    flex-direction: column;
+  }
+
+  .heroSectionContainer__finalText {
+    width: 90%;
+    background-color: transparent;
+  }
+
+  .heroSection__image {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .heroSectionContainer__finalText p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .heroSectionContainer__finalText h1 {
+    font-size: 2rem;
+  }
+}
