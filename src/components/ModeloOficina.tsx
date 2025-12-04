@@ -84,11 +84,9 @@ export function Model(props: JSX.IntrinsicElements["group"] & {
 }) {
   const { onPantallaClick, ...restProps } = props;
   const { nodes, materials } = useGLTF(modeloUrl) as GLTFResult;
-  const [mostrarTitulo, setMostrarTitulo] = useState<boolean>(false);
 
   const handlePantallaClick = (e: any) => {
     e.stopPropagation();
-    setMostrarTitulo(true);
     
     if (onPantallaClick) {
       onPantallaClick();
@@ -153,17 +151,7 @@ export function Model(props: JSX.IntrinsicElements["group"] & {
           document.body.style.cursor = "default";
         }}
       >
-        {mostrarTitulo && (
-          <Text
-            position={[0.4, 0.7, -0.13]}
-            fontSize={0.085}
-            color="white"
-            anchorX="center"
-            anchorY="middle"
-          >
-            Jose Salazar
-          </Text>
-        )}
+        
       </mesh>
 
       <mesh

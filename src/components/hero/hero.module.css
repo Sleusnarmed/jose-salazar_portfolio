@@ -17,3 +17,203 @@
     padding: 0;
 }
 
+/* Contenedor principal - POSITION RELATIVE ES CLAVE */
+.modelContainer {
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+}
+
+/* Canvas 3D */
+.canva {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Botón de volver */
+.zoomBackButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.zoomBackButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+/* OVERLAY CONTAINER - LA PARTE NUEVA */
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Permite clics en el canvas detrás */
+  z-index: 50;
+}
+
+/* Tarjeta de perfil */
+.profileCard {
+  pointer-events: auto; /* Vuelve a habilitar clics en la tarjeta */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: cardEntrance 0.5s ease-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Encabezado de la tarjeta */
+.cardHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #4ECDC4;
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+}
+
+.profileName {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+  color: #2D3436;
+}
+
+.profileTitle {
+  color: #636E72;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Cuerpo de la tarjeta */
+.cardBody {
+  margin-bottom: 1.5rem;
+}
+
+.profileBio {
+  color: #2D3436;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.skillTag {
+  background: #F1F2F6;
+  color: #2D3436;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Pie de la tarjeta */
+.cardFooter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: #4ECDC4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.primaryButton:hover {
+  background: #3DBBB3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #4ECDC4;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #4ECDC4;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.secondaryButton:hover {
+  background: rgba(78, 205, 196, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Botón de cerrar (alternativo) */
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #636E72;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: #2D3436;
+}

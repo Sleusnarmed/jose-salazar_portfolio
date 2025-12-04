@@ -50,6 +50,7 @@ const CameraAnimator = ({ target, controlsRef }) => {
 
 const HeroSection = () => {
   const [cameraTarget, setCameraTarget] = useState(null);
+  const [mostrarOverlay, setMostrarOverlay] = useState(false);
   const controlsRef = useRef();
 
   const initialCamera = {
@@ -70,6 +71,7 @@ const HeroSection = () => {
       position: cameraPos,
       target: pantallaPosition
     });
+    setMostrarOverlay(true);
   };
 
   const resetCamera = () => {
@@ -77,8 +79,8 @@ const HeroSection = () => {
       position: initialCamera.position,
       target: initialCamera.target
     });
+    setMostrarOverlay(false); 
 
-    // Esto limpia el estado cuando llega al final
     setTimeout(() => setCameraTarget(null), 600);
   };
 
@@ -105,7 +107,6 @@ const HeroSection = () => {
             scale={0.5}
             onPantallaClick={handlePantallaClick}
           />
-
           <Environment preset="sunset" />
         </Suspense>
 
@@ -119,9 +120,64 @@ const HeroSection = () => {
           controlsRef={controlsRef}
         />
       </Canvas>
+
+      {mostrarOverlay && (
+        <div className={styles.overlayContainer}>
+          <div className={styles.profileCard}>
+            <div className={styles.cardHeader}>
+              <img 
+                src="#" 
+                alt="José Salazar" 
+                className={styles.profileImage}
+              />
+              <h2 className={styles.profileName}>José Salazar</h2>
+              <p className={styles.profileTitle}>Desarrollador Full Stack</p>
+            </div>
+            
+            <div className={styles.cardBody}>
+              <p className={styles.profileBio}>
+                Especializado en React, Three.js y desarrollo web interactivo. 
+                Creo experiencias 3D inmersivas para la web.
+              </p>
+              
+              <div className={styles.skillsList}>
+                <span className={styles.skillTag}>React</span>
+                <span className={styles.skillTag}>Three.js</span>
+                <span className={styles.skillTag}>JavaScript</span>
+                <span className={styles.skillTag}>Blender</span>
+                <span className={styles.skillTag}>Node.js</span>
+              </div>
+            </div>
+            
+            <div className={styles.cardFooter}>
+              <a 
+                href="/proyectos" 
+                className={styles.primaryButton}
+                onClick={(e) => e.stopPropagation()}
+              >
+                Ver Proyectos
+              </a>
+              <a 
+                href="/contacto" 
+                className={styles.secondaryButton}
+                onClick={(e) => e.stopPropagation()}
+              >
+                Contactar
+              </a>
+            </div>
+            
+            <button 
+              className={styles.closeButton}
+              onClick={resetCamera}
+              aria-label="Cerrar"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
 
 export default HeroSection;
