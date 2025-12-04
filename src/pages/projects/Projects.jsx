@@ -1,4 +1,4 @@
-import ProjectContainer from "@/components/projectContainer/projectContainer";
+import ProjectContainer from "@/components/projectContainer/ProjectContainer.jsx";
 import styles from "./projects.module.css";
 import mockupImage from "@/assets/img/mockup.webp";
 import reactLogo from '@/assets/img/react-logo.svg'
