@@ -12,7 +12,7 @@ const Navbar = () => {
     setHamburgerOpen((prev) => !prev);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -134,25 +134,31 @@ const Navbar = () => {
             <p>Follow me</p>
             <div className={styles.headerContainer_socials__imageContainer}>
               <div className={styles.headerContainer_socials__imageWrapper}>
-                <img
-                  className={styles.headerContainer_socials__image}
-                  src={linkedin}
-                  alt="Linkedin logo"
-                />
+                <a href="https://www.linkedin.com/in/jmsalazarmacgregor/" target="_blank">
+                  <img
+                    className={styles.headerContainer_socials__image}
+                    src={linkedin}
+                    alt="Linkedin logo"
+                  />
+                </a>
               </div>
               <div className={styles.headerContainer_socials__imageWrapper}>
-                <img
-                  className={styles.headerContainer_socials__image}
-                  src={github}
-                  alt="Github logo"
-                />
+                <a href="https://github.com/Sleusnarmed" target="_blank">
+                  <img
+                    className={styles.headerContainer_socials__image}
+                    src={github}
+                    alt="Github logo"
+                  />
+                </a>
               </div>
               <div className={styles.headerContainer_socials__imageWrapper}>
-                <img
-                  className={styles.headerContainer_socials__image}
-                  src={twitter}
-                  alt="Twitter logo"
-                />
+                <a href="https://x.com/JoseSalazarDev" target="_blank">
+                  <img
+                    className={styles.headerContainer_socials__image}
+                    src={twitter}
+                    alt="Twitter logo"
+                  />
+                </a>
               </div>
             </div>
           </div>
